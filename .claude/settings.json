@@ -7,11 +7,7 @@
       "Bash(git diff *)",
       "Bash(git status)"
     ],
-    "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Bash(git push *)"
-    ]
+    "deny": ["Read(./.env)", "Read(./.env.*)", "Bash(git push *)"]
   },
   "hooks": {
     "PostToolUse": [
