@@ -1,0 +1,144 @@
+/*
+ * Semantic colors: what a color is for, not what it looks like.
+ * Components use only these. Light theme lives on :root, dark theme
+ * overrides it on [data-theme='dark'] (the toggle comes in T5.1).
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --color-bg: var(--slate-40);
+  --color-surface: var(--white);
+  --color-surface-sunken: var(--slate-40);
+  --color-header: color-mix(in srgb, var(--white) 82%, transparent);
+
+  /* Borders */
+  --color-border: var(--slate-160);
+  --color-border-strong: var(--slate-280);
+  --color-divider: var(--slate-100);
+
+  /* Text */
+  --color-text: var(--slate-950);
+  --color-text-secondary: var(--slate-850);
+  --color-text-muted: var(--slate-650);
+
+  /* Accents and focus */
+  --color-teal: var(--teal-600);
+  --color-accent: var(--blue-610);
+  --color-on-accent: var(--white);
+  --color-focus: var(--color-accent);
+
+  /* Badges, chips, hover */
+  --color-dot: var(--teal-540);
+  --color-badge-bg: var(--teal-100);
+  --color-badge-text: var(--teal-710);
+  --color-chip-bg: var(--teal-90);
+  --color-chip-text: var(--teal-710);
+  --color-row-hover: var(--teal-80);
+
+  /* Project monogram tiles */
+  --color-tile-start: var(--teal-120);
+  --color-tile-end: var(--blue-160);
+  --color-tile-text: var(--navy-750);
+
+  /* Hero gradient and photo backdrop */
+  --color-hero-start: var(--white);
+  --color-hero-mid: var(--teal-50);
+  --color-hero-end: var(--blue-110);
+  --color-photo-start: var(--teal-190);
+  --color-photo-end: var(--blue-290);
+
+  /* Section bands */
+  --color-band-exp: var(--white);
+  --color-band-tint: var(--teal-110);
+  --color-band-dark: var(--navy-930);
+  --color-band-dark-end: var(--navy-890);
+  --color-marquee-bg: var(--navy-930);
+  --color-contact-start: var(--navy-930);
+  --color-contact-mid: var(--navy-860);
+  --color-contact-end: var(--navy-770);
+  --color-footer-bg: var(--navy-980);
+
+  /* Text and controls on dark bands */
+  --color-on-dark: var(--teal-60);
+  --color-on-dark-muted: var(--slate-230);
+  --color-on-dark-border: var(--navy-690);
+  --color-mint: var(--teal-260);
+  --color-on-mint: var(--slate-950);
+
+  /* Status */
+  --color-error: var(--red-620);
+  --color-error-bg: var(--red-70);
+  --color-warning: var(--yellow-200);
+  --color-info-bg: var(--blue-70);
+  --color-info-text: var(--blue-800);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --color-bg: var(--navy-950);
+  --color-surface: var(--navy-900);
+  --color-surface-sunken: var(--navy-900);
+  --color-header: color-mix(in srgb, var(--navy-950) 82%, transparent);
+
+  /* Borders */
+  --color-border: var(--navy-780);
+  --color-border-strong: var(--navy-650);
+  --color-divider: var(--navy-830);
+
+  /* Text */
+  --color-text: var(--teal-60);
+  --color-text-secondary: var(--teal-220);
+  --color-text-muted: var(--teal-380);
+
+  /* Accents and focus */
+  --color-teal: var(--teal-310);
+  --color-accent: var(--blue-360);
+  --color-on-accent: var(--slate-960);
+  /* Re-resolve the alias here so it follows a theme set on any element */
+  --color-focus: var(--color-accent);
+
+  /* Badges, chips, hover */
+  --color-dot: var(--teal-370);
+  --color-badge-bg: color-mix(in srgb, var(--teal-370) 16%, transparent);
+  --color-badge-text: var(--teal-260);
+  --color-chip-bg: color-mix(in srgb, var(--teal-370) 14%, transparent);
+  --color-chip-text: var(--teal-260);
+  --color-row-hover: color-mix(in srgb, var(--teal-370) 8%, transparent);
+
+  /* Project monogram tiles */
+  --color-tile-start: var(--teal-810);
+  --color-tile-end: var(--blue-820);
+  --color-tile-text: var(--teal-140);
+
+  /* Hero gradient and photo backdrop */
+  --color-hero-start: var(--navy-950);
+  --color-hero-mid: var(--navy-910);
+  --color-hero-end: var(--blue-880);
+  --color-photo-start: var(--teal-730);
+  --color-photo-end: var(--blue-740);
+
+  /* Section bands */
+  --color-band-exp: var(--navy-970);
+  --color-band-tint: var(--navy-920);
+  --color-band-dark: var(--navy-850);
+  --color-band-dark-end: var(--navy-800);
+  --color-marquee-bg: var(--navy-980);
+  --color-contact-start: var(--navy-820);
+  --color-contact-mid: var(--teal-720);
+  --color-contact-end: var(--teal-660);
+  --color-footer-bg: var(--navy-990);
+
+  /* Text and controls on dark bands */
+  --color-on-dark-muted: var(--teal-160);
+  --color-on-dark-border: color-mix(in srgb, var(--white) 28%, transparent);
+
+  /* Status */
+  --color-error: var(--red-380);
+  --color-error-bg: color-mix(in srgb, var(--red-380) 14%, transparent);
+  --color-info-bg: color-mix(in srgb, var(--blue-360) 14%, transparent);
+  --color-info-text: var(--blue-220);
+}
