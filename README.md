@@ -13,15 +13,15 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Commands
 
-| Command                | What it does                                 |
-| ---------------------- | -------------------------------------------- |
-| `npm run dev`          | Start the dev server                         |
-| `npm run build`        | Production build                             |
-| `npm run start`        | Serve the production build                   |
-| `npm run lint`         | Run ESLint                                   |
-| `npm run typecheck`    | Type-check the whole project with `tsc`      |
-| `npm run format`       | Format all files with Prettier               |
-| `npm run format:check` | Check formatting without changing files (CI) |
+| Command                | What it does                                     |
+| ---------------------- | ------------------------------------------------ |
+| `npm run dev`          | Start the dev server                             |
+| `npm run build`        | Production build                                 |
+| `npm run start`        | Serve the production build                       |
+| `npm run lint`         | Run ESLint                                       |
+| `npm run typecheck`    | Generate route types, then type-check with `tsc` |
+| `npm run format`       | Format all files with Prettier                   |
+| `npm run format:check` | Check formatting without changing files (CI)     |
 
 ## Project structure
 
@@ -71,3 +71,11 @@ On every commit it runs [lint-staged](https://github.com/lint-staged/lint-staged
 The commit is blocked if ESLint finds an error it can't fix. Type checking runs in CI, not in the hook.
 
 Line endings are LF everywhere (enforced by `.gitattributes` and Prettier's `endOfLine`).
+
+## CI
+
+[GitHub Actions](.github/workflows/ci.yml) runs on every pull request and on pushes to `main`:
+`npm run lint`, `npm run typecheck` and `npm run format:check` on Node 22.
+
+`typecheck` runs `next typegen` first: route types in `.next/types` and `next-env.d.ts` are generated
+by Next.js and are not in git, so a clean checkout needs them before `tsc`.
