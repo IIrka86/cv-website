@@ -23,6 +23,43 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run format`       | Format all files with Prettier               |
 | `npm run format:check` | Check formatting without changing files (CI) |
 
+## Project structure
+
+```
+src/
+  app/                # routing only: layouts, pages, route handlers
+    [locale]/         # localized pages (phase 3)
+    admin/            # admin panel (phase 6)
+    login/            # sign-in page (phase 6)
+  components/
+    ui/               # UI kit: Button, Heading, Tabs, ...
+    sections/         # page sections: Hero, Skills, About, Experience, ...
+  content/            # CV data, typed by src/types
+  i18n/               # next-intl configuration
+  lib/                # pure helpers: dates, experience length
+  server/             # server-only code: DB queries (phase 6)
+  styles/
+    tokens/           # design tokens as CSS variables
+    globals.css       # reset and base styles
+  types/              # shared TypeScript types
+messages/             # UI translations: en.json, ru.json, pl.json
+public/               # static files served from /
+```
+
+### Layers
+
+```
+tokens → ui → sections → app (pages)
+```
+
+A layer imports only from the layers to its left:
+
+- `components/ui` uses design tokens and nothing from `sections` or `app`.
+- `components/sections` compose UI kit components and receive data via props.
+- Pages in `app` read data on the server and pass it down to sections.
+
+Components use semantic tokens only — no raw colors, sizes or durations.
+
 ## Pre-commit hook
 
 `npm install` sets up a [husky](https://typicode.github.io/husky/) pre-commit hook via the `prepare` script.
