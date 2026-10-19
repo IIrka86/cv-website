@@ -1,0 +1,88 @@
+/*
+ * Primitive palette. Raw colors named by hue and lightness step
+ * (higher step = darker). Components never use these directly;
+ * semantic tokens map onto them.
+ * Values are hex, exactly as in the design.
+ */
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Teal: brand hue, light tints to deep ink */
+  --teal-50: #eef7f8;
+  --teal-60: #e8f6f6;
+  --teal-80: #e6f3f4;
+  --teal-90: #e3f2f4;
+  --teal-100: #ddf3f1;
+  --teal-110: #dceef1;
+  --teal-120: #d3efee;
+  --teal-140: #cdebf0;
+  --teal-160: #cfe6ea;
+  --teal-190: #bfe6e4;
+  --teal-220: #c2dcde;
+  --teal-260: #7fe0da;
+  --teal-310: #5ed6cc;
+  --teal-370: #3fc6c0;
+  --teal-380: #8db2b6;
+  --teal-540: #0b8a8f;
+  --teal-600: #08787d;
+  --teal-660: #13696b;
+  --teal-710: #075e5b;
+  --teal-720: #105a63;
+  --teal-730: #14585c;
+  --teal-810: #11474c;
+
+  /* Navy: dark teal-navy backgrounds and bands */
+  --navy-650: #2d6670;
+  --navy-690: #2e5a6e;
+  --navy-750: #0b4f6b;
+  --navy-770: #0e4d5c;
+  --navy-780: #1c4a52;
+  --navy-800: #12465a;
+  --navy-820: #0e4450;
+  --navy-830: #15404a;
+  --navy-850: #0f3e47;
+  --navy-860: #0d3b52;
+  --navy-890: #0c3446;
+  --navy-900: #0c333a;
+  --navy-910: #0a3138;
+  --navy-920: #0a2f36;
+  --navy-930: #0b2a3a;
+  --navy-950: #072429;
+  --navy-970: #05191d;
+  --navy-980: #03171b;
+  --navy-990: #020f12;
+
+  /* Slate: blue-gray neutrals for text, borders, page background */
+  --slate-40: #f3f8fa;
+  --slate-100: #e3edf1;
+  --slate-160: #d6e4ea;
+  --slate-230: #bfd8e0;
+  --slate-280: #b7ccd6;
+  --slate-650: #4a6072;
+  --slate-850: #24394a;
+  --slate-950: #0b2233;
+  --slate-960: #04202a;
+
+  /* Blue: accent and info */
+  --blue-70: #e9f1fd;
+  --blue-110: #dcebfa;
+  --blue-160: #d6e3f8;
+  --blue-220: #bfd6ff;
+  --blue-290: #a9c8f2;
+  --blue-360: #7db3ff;
+  --blue-610: #1f5fd1;
+  --blue-740: #1c4c7e;
+  --blue-800: #1a3e7a;
+  --blue-820: #173e66;
+  --blue-880: #0e3550;
+
+  /* Red: errors */
+  --red-70: #fdecec;
+  --red-380: #f08a8a;
+  --red-620: #b42318;
+
+  /* Yellow: warnings */
+  --yellow-200: #ffd666;
+}
