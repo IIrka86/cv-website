@@ -1,8 +1,10 @@
 ---
 paths:
-  - "src/components/**"
+  - 'src/components/**'
 ---
+
 # Components
+
 - One folder per component: `Name.tsx`, `Name.module.css`, `Name.stories.tsx`, `index.ts`
 - Variants via props (`variant`, `size`, `tone`), not new components
 - Props typed with an exported `NameProps` interface; no `any`
