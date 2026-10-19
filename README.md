@@ -2,6 +2,10 @@
 
 Personal CV and portfolio built with Next.js (App Router), TypeScript and CSS Modules.
 
+**Live:** [cv-website-three-mocha.vercel.app](https://cv-website-three-mocha.vercel.app/)
+
+Deployed on [Vercel](https://vercel.com): every merge into `main` goes to production, every pull request gets a preview URL.
+
 ## Getting started
 
 ```bash
