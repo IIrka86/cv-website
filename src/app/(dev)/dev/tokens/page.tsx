@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { checkContrast } from '@/lib/contrast';
 import { getTokens } from '@/lib/tokens';
+import { ContrastTable } from './_components/ContrastTable';
 import {
   byPrefix,
   PaletteView,
@@ -43,6 +45,10 @@ export default async function TokensPage() {
             dark={tokens.semantic.dark}
           />
         </div>
+      </TokenGroup>
+
+      <TokenGroup title="Contrast (WCAG 2.2)">
+        <ContrastTable results={checkContrast(tokens)} />
       </TokenGroup>
 
       <TokenGroup title="Palette (primitives)">
