@@ -73,6 +73,14 @@
   --color-warning: var(--yellow-200);
   --color-info-bg: var(--blue-70);
   --color-info-text: var(--blue-800);
+
+  /* Shadows */
+  --shadow-lift: 0 16px 40px
+    color-mix(in srgb, var(--slate-950) 10%, transparent);
+  --shadow-toast: 0 16px 40px
+    color-mix(in srgb, var(--slate-950) 25%, transparent);
+  /* Re-declared in both themes so --color-teal resolves per theme */
+  --shadow-ring: 0 0 0 1px var(--color-teal);
 }
 
 [data-theme='dark'] {
@@ -141,4 +149,10 @@
   --color-error-bg: color-mix(in srgb, var(--red-380) 14%, transparent);
   --color-info-bg: color-mix(in srgb, var(--blue-360) 14%, transparent);
   --color-info-text: var(--blue-220);
+
+  /* Shadows */
+  --shadow-lift: 0 16px 40px color-mix(in srgb, var(--black) 35%, transparent);
+  --shadow-toast: 0 16px 40px color-mix(in srgb, var(--black) 50%, transparent);
+  /* Re-declared in both themes so --color-teal resolves per theme */
+  --shadow-ring: 0 0 0 1px var(--color-teal);
 }

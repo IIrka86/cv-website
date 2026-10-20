@@ -1,0 +1,33 @@
+/* Motion tokens: durations and easing curves. */
+
+:root {
+  /* Durations */
+  --duration-fast: 200ms;
+  --duration-base: 250ms;
+  --duration-tab: 450ms;
+  --duration-enter: 800ms;
+  --duration-stagger: 120ms;
+  --duration-photo: 1400ms;
+  --duration-marquee: 32s;
+
+  /* Easing */
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-standard: ease;
+  --ease-linear: linear;
+}
+
+/*
+ * Near-zero instead of 0s so transitionend/animationend still fire.
+ * The marquee keeps its duration: an infinite loop at 0.01ms would flicker,
+ * it is paused separately.
+ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0.01ms;
+    --duration-base: 0.01ms;
+    --duration-tab: 0.01ms;
+    --duration-enter: 0.01ms;
+    --duration-stagger: 0ms;
+    --duration-photo: 0.01ms;
+  }
+}

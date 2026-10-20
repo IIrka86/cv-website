@@ -1,0 +1,46 @@
+/*
+ * Layout tokens: spacing, radii, sizes, z-index, breakpoints.
+ * Sizes are in rem so they grow with the user's browser font size.
+ */
+
+:root {
+  /* Spacing: the number is how many 4px steps */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-28: 7rem;
+
+  /* Radii */
+  --radius-xs: 0.375rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+  --radius-full: 999px;
+
+  /* Sizes */
+  --container-max: 75rem;
+  --container-padding-inline: clamp(1rem, 4vw, 3rem);
+  --touch-target: 2.75rem;
+  --header-offset: 4.5rem;
+
+  /*
+   * Breakpoint, for reference only: var() doesn't work in @media conditions,
+   * so write the value literally: @media (width >= 860px) { ... }
+   */
+  --bp-md: 860px;
+
+  /* Z-index */
+  --z-header: 5;
+  --z-toast: 50;
+}
