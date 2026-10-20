@@ -18,8 +18,7 @@
 
 /*
  * Near-zero instead of 0s so transitionend/animationend still fire.
- * The marquee keeps its duration: an infinite loop at 0.01ms would flicker,
- * it is paused separately.
+ * The marquee is stopped by the global reduced-motion rule in globals.css.
  */
 @media (prefers-reduced-motion: reduce) {
   :root {

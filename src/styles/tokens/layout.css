@@ -43,4 +43,8 @@
   /* Z-index */
   --z-header: 5;
   --z-toast: 50;
+
+  /* Focus */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
 }
