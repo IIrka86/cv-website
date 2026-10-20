@@ -1,0 +1,71 @@
+.panels {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, calc(var(--space-16) * 8)), 1fr)
+  );
+  gap: var(--space-6);
+}
+
+/* Re-resolve color here: body passes down an already computed light value */
+.panel {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+  min-inline-size: 0;
+  padding: var(--space-6);
+  border-radius: var(--radius-2xl);
+  border: thin solid var(--color-border);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.title {
+  font-size: var(--text-heading-xs-size);
+  font-weight: var(--text-heading-xs-weight);
+}
+
+.scroll {
+  overflow-x: auto;
+}
+
+.table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-caption-size);
+}
+
+.table th,
+.table td {
+  padding: var(--space-2) var(--space-3);
+  border-block-end: thin solid var(--color-divider);
+  text-align: start;
+  vertical-align: middle;
+}
+
+.table th {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
+.table code {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-xs-size);
+}
+
+.fail td {
+  color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+.sampleBase {
+  display: inline-block;
+  border-radius: var(--radius-sm);
+}
+
+.sample {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+}

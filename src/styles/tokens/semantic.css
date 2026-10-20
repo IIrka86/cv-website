@@ -24,7 +24,8 @@
   --color-text-muted: var(--slate-650);
 
   /* Accents and focus */
-  --color-teal: var(--teal-600);
+  /* Design had --teal-600: 4.39:1 on --color-band-tint, below 4.5:1 */
+  --color-teal: var(--teal-660);
   --color-accent: var(--blue-610);
   --color-on-accent: var(--white);
   --color-focus: var(--color-accent);
@@ -73,6 +74,14 @@
   --color-warning: var(--yellow-200);
   --color-info-bg: var(--blue-70);
   --color-info-text: var(--blue-800);
+
+  /* Shadows */
+  --shadow-lift: 0 16px 40px
+    color-mix(in srgb, var(--slate-950) 10%, transparent);
+  --shadow-toast: 0 16px 40px
+    color-mix(in srgb, var(--slate-950) 25%, transparent);
+  /* Re-declared in both themes so --color-teal resolves per theme */
+  --shadow-ring: 0 0 0 1px var(--color-teal);
 }
 
 [data-theme='dark'] {
@@ -129,7 +138,8 @@
   --color-marquee-bg: var(--navy-980);
   --color-contact-start: var(--navy-820);
   --color-contact-mid: var(--teal-720);
-  --color-contact-end: var(--teal-660);
+  /* Design had --teal-660: --color-mint text on it was 4.16:1 */
+  --color-contact-end: var(--teal-730);
   --color-footer-bg: var(--navy-990);
 
   /* Text and controls on dark bands */
@@ -141,4 +151,10 @@
   --color-error-bg: color-mix(in srgb, var(--red-380) 14%, transparent);
   --color-info-bg: color-mix(in srgb, var(--blue-360) 14%, transparent);
   --color-info-text: var(--blue-220);
+
+  /* Shadows */
+  --shadow-lift: 0 16px 40px color-mix(in srgb, var(--black) 35%, transparent);
+  --shadow-toast: 0 16px 40px color-mix(in srgb, var(--black) 50%, transparent);
+  /* Re-declared in both themes so --color-teal resolves per theme */
+  --shadow-ring: 0 0 0 1px var(--color-teal);
 }

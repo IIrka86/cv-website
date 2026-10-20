@@ -1,0 +1,18 @@
+.page {
+  inline-size: 100%;
+  max-inline-size: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-12) var(--container-padding-inline);
+}
+
+.title {
+  font-size: var(--text-display-lg-size);
+  line-height: var(--text-display-lg-leading);
+  font-weight: var(--text-display-lg-weight);
+  letter-spacing: var(--text-display-lg-tracking);
+}
+
+.intro {
+  margin-block: var(--space-3) var(--space-8);
+  color: var(--color-text-secondary);
+}
