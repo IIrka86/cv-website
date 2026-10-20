@@ -1,0 +1,48 @@
+import type { Preview } from '@storybook/nextjs-vite';
+import '@/styles/globals.css';
+import {
+  ibmPlexSans,
+  jetBrainsMono,
+  spaceGrotesk,
+} from '@/styles/tokens/fonts';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
+
+document.documentElement.classList.add(
+  spaceGrotesk.variable,
+  ibmPlexSans.variable,
+  jetBrainsMono.variable,
+);
+
+const preview: Preview = {
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: 'todo',
+    },
+
+    backgrounds: {
+      disable: true,
+    },
+  },
+  decorators: [
+    withThemeByDataAttribute({
+      themes: {
+        light: 'light',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+      attributeName: 'data-theme',
+    }),
+  ],
+};
+
+export default preview;

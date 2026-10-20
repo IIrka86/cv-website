@@ -34,3 +34,6 @@ jobs:
 
       - name: Format check
         run: npm run format:check
+
+      - name: Build Storybook
+        run: npm run build-storybook
