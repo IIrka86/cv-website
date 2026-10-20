@@ -1,10 +1,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
-import {
-  ibmPlexSans,
-  jetBrainsMono,
-  spaceGrotesk,
-} from '@/styles/tokens/fonts';
+import { fontVariables } from '@/styles/tokens/fonts';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,10 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html
-      lang="en"
-      className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${jetBrainsMono.variable}`}
-    >
+    <html lang="en" className={fontVariables.join(' ')}>
       <body>{children}</body>
     </html>
   );

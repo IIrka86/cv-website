@@ -1,31 +1,16 @@
 import type { Preview } from '@storybook/nextjs-vite';
 import '@/styles/globals.css';
-import {
-  ibmPlexSans,
-  jetBrainsMono,
-  spaceGrotesk,
-} from '@/styles/tokens/fonts';
+import { fontVariables } from '@/styles/tokens/fonts';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
-document.documentElement.classList.add(
-  spaceGrotesk.variable,
-  ibmPlexSans.variable,
-  jetBrainsMono.variable,
-);
+document.documentElement.classList.add(...fontVariables);
 
 const preview: Preview = {
   parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
-
     a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
+      // Only affects story tests run by @storybook/addon-vitest, which is not
+      // installed yet (T2.8). Until then violations show in the
+      // Accessibility panel only; CI's build-storybook doesn't check a11y.
       test: 'todo',
     },
 
