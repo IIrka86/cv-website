@@ -1,0 +1,83 @@
+.section {
+  color: var(--color-text);
+  padding-block: var(--section-padding-block);
+}
+
+.paddingNone {
+  padding-block: 0;
+}
+
+.default {
+  background: var(--color-bg);
+}
+
+.hero {
+  background: linear-gradient(
+    120deg,
+    var(--color-hero-start) 0%,
+    var(--color-hero-mid) 55%,
+    var(--color-hero-end) 100%
+  );
+}
+
+.exp {
+  background: var(--color-band-exp);
+}
+
+.tint {
+  background: var(--color-band-tint);
+}
+
+.dark {
+  background: linear-gradient(
+    135deg,
+    var(--color-band-dark),
+    var(--color-band-dark-end)
+  );
+}
+
+.contact {
+  background: linear-gradient(
+    135deg,
+    var(--color-contact-start) 0%,
+    var(--color-contact-mid) 60%,
+    var(--color-contact-end) 100%
+  );
+}
+
+/*
+ * Dark bands remap the semantic tokens, so any ui component inside them
+ * works unchanged. Not remapped: --color-bg (the band is the background),
+ * status, tile and hero colors (not used on dark bands).
+ */
+.dark,
+.contact {
+  /* Text */
+  --color-text: var(--color-on-dark);
+  --color-text-secondary: var(--color-on-dark);
+  --color-text-muted: var(--color-on-dark-muted);
+
+  /* Surfaces and lines */
+  --color-surface: var(--color-on-dark-surface);
+  --color-surface-sunken: var(--color-on-dark-surface);
+  --color-border: var(--color-on-dark-border);
+  --color-border-strong: var(--color-on-dark-border);
+  --color-divider: var(--color-on-dark-border);
+
+  /* Mint is the accent on dark bands */
+  --color-accent: var(--color-mint);
+  --color-on-accent: var(--color-on-mint);
+  --color-teal: var(--color-mint);
+  --color-focus: var(--color-mint);
+
+  /* Badges, chips, hover */
+  --color-dot: var(--color-mint);
+  --color-badge-bg: var(--color-on-dark-chip-bg);
+  --color-badge-text: var(--color-mint);
+  --color-chip-bg: var(--color-on-dark-chip-bg);
+  --color-chip-text: var(--color-mint);
+  --color-row-hover: var(--color-on-dark-surface);
+
+  /* On :root it was computed from the light --color-teal; re-resolve here */
+  --shadow-ring: 0 0 0 1px var(--color-teal);
+}

@@ -10,3 +10,4 @@ paths:
 - Props typed with an exported `NameProps` interface; no `any`
 - Interactive elements are real `<button>`, `<a>`, `<input>`; icon-only buttons have `aria-label`
 - Server Component unless it needs state or event handlers
+- Empty props → `type NameProps = …`, because an empty interface fails `no-empty-object-type`
