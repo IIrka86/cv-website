@@ -1,0 +1,5 @@
+.container {
+  max-inline-size: var(--container-max);
+  padding-inline: var(--container-padding-inline);
+  margin-inline: auto;
+}

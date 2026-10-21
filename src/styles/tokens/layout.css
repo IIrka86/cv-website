@@ -47,4 +47,7 @@
   /* Focus */
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
+
+  /* Section padding-block */
+  --section-padding-block: var(--space-24);
 }

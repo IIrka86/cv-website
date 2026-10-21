@@ -1,0 +1,19 @@
+import React, { FC } from 'react';
+import styles from './%Name%.module.css';
+import { clsx } from 'clsx';
+
+export const %NAME%_VARIANTS = ['default'] as const;
+
+export type %Name%Variant = (typeof %NAME%_VARIANTS)[number];
+
+export interface %Name%Props extends React.ComponentPropsWithoutRef<'div'> {
+  variant?: %Name%Variant;
+}
+
+export const %Name%: FC<%Name%Props> = ({
+  variant = 'default',
+  className,
+  ...rest
+}) => {
+  return <div className={clsx(styles[variant], className)} {...rest} />;
+};
