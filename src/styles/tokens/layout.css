@@ -48,6 +48,6 @@
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
 
-  /* Section padding-block */
-  --section-padding-block: var(--space-24);
+  /* Section padding-block: 48px below 600px, 96px from 1200px */
+  --section-padding-block: clamp(var(--space-12), 8vw, var(--space-24));
 }

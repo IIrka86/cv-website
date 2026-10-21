@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    variant: 'display-xl',
+    variant: 'heading-md',
   },
 };
 

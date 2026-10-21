@@ -17,15 +17,27 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Commands
 
-| Command                | What it does                                     |
-| ---------------------- | ------------------------------------------------ |
-| `npm run dev`          | Start the dev server                             |
-| `npm run build`        | Production build                                 |
-| `npm run start`        | Serve the production build                       |
-| `npm run lint`         | Run ESLint                                       |
-| `npm run typecheck`    | Generate route types, then type-check with `tsc` |
-| `npm run format`       | Format all files with Prettier                   |
-| `npm run format:check` | Check formatting without changing files (CI)     |
+| Command                   | What it does                                     |
+| ------------------------- | ------------------------------------------------ |
+| `npm run dev`             | Start the dev server                             |
+| `npm run build`           | Production build                                 |
+| `npm run start`           | Serve the production build                       |
+| `npm run lint`            | Run ESLint                                       |
+| `npm run typecheck`       | Generate route types, then type-check with `tsc` |
+| `npm run format`          | Format all files with Prettier                   |
+| `npm run format:check`    | Check formatting without changing files (CI)     |
+| `npm run storybook`       | Start Storybook on port 6006                     |
+| `npm run build-storybook` | Build static Storybook into `storybook-static/`  |
+
+## Storybook
+
+The UI kit (`src/components/ui`) is documented in [Storybook](https://storybook.js.org) with
+`@storybook/nextjs-vite`. Each component has a `Name.stories.tsx` next to it.
+
+- The toolbar switches light and dark theme: it sets `data-theme` on `<html>`, like the site does.
+- The Accessibility panel runs axe on every story.
+- `.storybook/preview.tsx` loads `globals.css` and adds the font variables to `<html>`, because
+  stories render without `app/layout.tsx`.
 
 ## Project structure
 
@@ -79,7 +91,8 @@ Line endings are LF everywhere (enforced by `.gitattributes` and Prettier's `end
 ## CI
 
 [GitHub Actions](.github/workflows/ci.yml) runs on every pull request and on pushes to `main`:
-`npm run lint`, `npm run typecheck` and `npm run format:check` on Node 22.
+`npm run lint`, `npm run typecheck`, `npm run format:check` and `npm run build-storybook` on Node 22.
+The Storybook build catches broken stories; it doesn't run accessibility checks.
 
 `typecheck` runs `next typegen` first: route types in `.next/types` and `next-env.d.ts` are generated
 by Next.js and are not in git, so a clean checkout needs them before `tsc`.

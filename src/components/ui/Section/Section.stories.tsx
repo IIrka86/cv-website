@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container';
 import { Text } from '@/components/ui/Text';
 import { Stack } from '@/components/ui/Stack';
 import { Fragment } from 'react';
+import { Heading } from '@/components/ui/Heading';
 
 const meta = {
   parameters: { layout: 'fullscreen' },
@@ -43,13 +44,14 @@ export const AllTones: Story = {
           <Section {...args} tone={tone}>
             <Container>
               <Stack gap={4}>
+                <Heading as={'h3'}>I’m a Full Stack Developer </Heading>
                 <Text>
                   I’m a Full Stack Developer with a strong Frontend focus,
                   building fast, scalable, and user-friendly web applications. I
                   enjoy turning complex requirements into clean, maintainable
                   solutions that people actually enjoy using.
                 </Text>
-                <Text>
+                <Text tone="secondary">
                   Over the past 7+ years, I’ve worked across the full
                   development lifecycle — from architecting new products and
                   refactoring legacy codebases to implementing features and
@@ -59,9 +61,12 @@ export const AllTones: Story = {
                   implementing API endpoints and smaller backend solutions using
                   Node.js and Java. I’m comfortable owning tasks end-to-end,
                   from designing and testing UI components to working with APIs,
-                  data flows, and backend logic. I’ve also mentored junior
-                  developers, participated in architectural decisions, and
-                  collaborated closely with design and product teams.
+                  data flows, and backend logic.
+                </Text>
+                <Text tone="muted">
+                  I’ve also mentored junior developers, participated in
+                  architectural decisions, and collaborated closely with design
+                  and product teams.
                 </Text>
                 <a href="#">Some link</a>
               </Stack>

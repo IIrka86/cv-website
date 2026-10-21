@@ -36,6 +36,14 @@ const DARK_BANDS = [
   'contact-end',
   'footer-bg',
 ];
+// Bands behind Section tone="dark" and tone="contact"
+const SECTION_DARK_BANDS = [
+  'band-dark',
+  'band-dark-end',
+  'contact-start',
+  'contact-mid',
+  'contact-end',
+];
 
 export const CONTRAST_PAIRS: ContrastPair[] = [
   ...['text', 'text-secondary', 'text-muted', 'teal', 'error'].flatMap((fg) =>
@@ -57,6 +65,13 @@ export const CONTRAST_PAIRS: ContrastPair[] = [
     DARK_BANDS.map((bg) => text(fg, bg)),
   ),
   text('on-mint', 'mint'),
+  // Surfaces and chips that Section remaps on dark and contact bands
+  ...SECTION_DARK_BANDS.flatMap((band) => [
+    ...['on-dark', 'on-dark-muted', 'mint'].map((fg) =>
+      text(fg, 'on-dark-surface', band),
+    ),
+    text('mint', 'on-dark-chip-bg', band),
+  ]),
   ui('focus', 'bg'),
   ui('focus', 'surface'),
   ui('focus', 'band-exp'),

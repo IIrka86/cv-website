@@ -67,6 +67,12 @@
   --color-on-dark-border: var(--navy-690);
   --color-mint: var(--teal-260);
   --color-on-mint: var(--slate-950);
+  /*
+   * Translucent so they follow the band gradient under them.
+   * Kept low: mint text on them drops to 4.6:1 on --color-contact-mid (dark)
+   */
+  --color-on-dark-surface: color-mix(in srgb, var(--white) 4%, transparent);
+  --color-on-dark-chip-bg: color-mix(in srgb, var(--teal-370) 6%, transparent);
 
   /* Status */
   --color-error: var(--red-620);

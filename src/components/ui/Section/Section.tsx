@@ -29,7 +29,7 @@ export const Section: FC<SectionProps> = ({
       className={clsx(
         styles.section,
         styles[tone],
-        padding === 'none' && styles.flush,
+        padding === 'none' && styles.paddingNone,
         className,
       )}
       {...rest}
