@@ -1,0 +1,18 @@
+.icon {
+  flex: none;
+}
+
+.size-sm {
+  inline-size: var(--icon-sm);
+  block-size: var(--icon-sm);
+}
+
+.size-md {
+  inline-size: var(--icon-md);
+  block-size: var(--icon-md);
+}
+
+.size-lg {
+  inline-size: var(--icon-lg);
+  block-size: var(--icon-lg);
+}
