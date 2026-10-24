@@ -15,14 +15,13 @@ type BaseButtonProps = React.ComponentPropsWithoutRef<'button'> & {
   size?: ButtonSize;
 };
 
-// Icon-only button: no visible text, so the icon and the accessible name
-// are required.
 type IconButtonProps = BaseButtonProps & {
   variant: 'icon';
   icon: IconName;
   'aria-label': string;
   children?: never;
   iconPosition?: never;
+  size?: never;
 };
 
 type TextButtonProps = BaseButtonProps & {

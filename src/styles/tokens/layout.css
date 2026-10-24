@@ -32,6 +32,7 @@
   --container-max: 75rem;
   --container-padding-inline: clamp(1rem, 4vw, 3rem);
   --touch-target: 2.75rem;
+  --control-height-md: 3rem;
   --control-height-lg: 3.25rem;
   /* How far a pressed button sinks */
   --press-offset: 1px;
@@ -51,6 +52,10 @@
   /* Z-index */
   --z-header: 5;
   --z-toast: 50;
+
+  /* Borders and states */
+  --border-width: 1px;
+  --opacity-disabled: 0.55;
 
   /* Focus */
   --focus-ring-width: 2px;

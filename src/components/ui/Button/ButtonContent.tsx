@@ -13,7 +13,7 @@ export const ButtonContent: FC<ButtonContentProps> = ({
   variant,
   size,
   icon,
-  iconPosition,
+  iconPosition = 'end',
   children,
 }) => {
   return (

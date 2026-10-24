@@ -1,26 +1,27 @@
 import React, { FC } from 'react';
+import { clsx } from 'clsx';
 import type { ButtonSize, IconPosition } from '@/components/ui/Button';
 import { ButtonContent, getButtonClassName } from '@/components/ui/Button';
 import type { IconName } from '@/components/ui/Icon';
 import Link from 'next/link';
+import { isExternalHref, isInternalHref } from './href';
 
 export const BUTTON_LINK_VARIANTS = ['primary', 'ghost', 'icon'] as const;
 
 export type ButtonLinkVariant = (typeof BUTTON_LINK_VARIANTS)[number];
 
-export interface BaseButtonLinkProps extends React.ComponentPropsWithoutRef<'a'> {
+type BaseButtonLinkProps = React.ComponentPropsWithoutRef<'a'> & {
   href: string;
   size?: ButtonSize;
-}
+};
 
-// Icon-only button: no visible text, so the icon and the accessible name
-// are required.
 type IconButtonLinkProps = BaseButtonLinkProps & {
   variant: 'icon';
   icon: IconName;
   'aria-label': string;
   children?: never;
   iconPosition?: never;
+  size?: never;
 };
 
 type TextButtonLinkProps = BaseButtonLinkProps & {
@@ -38,6 +39,7 @@ export const ButtonLink: FC<ButtonLinkProps> = ({
   icon,
   iconPosition = 'end',
   download,
+  rel,
   className,
   children,
   ...rest
@@ -53,11 +55,12 @@ export const ButtonLink: FC<ButtonLinkProps> = ({
     </ButtonContent>
   );
 
-  if (href?.startsWith('/') && !download) {
+  if (isInternalHref(href) && !download) {
     return (
       <Link
         href={href}
         className={getButtonClassName({ variant, size, className })}
+        rel={rel}
         {...rest}
       >
         {renderButtonContent()}
@@ -65,14 +68,14 @@ export const ButtonLink: FC<ButtonLinkProps> = ({
     );
   }
 
-  const isExternal = href.startsWith('https://') || href.startsWith('http://');
+  const isExternal = isExternalHref(href);
 
   return (
     <a
       href={href}
       className={getButtonClassName({ variant, size, className })}
       target={isExternal ? '_blank' : undefined}
-      rel={isExternal ? 'noopener noreferrer' : undefined}
+      rel={isExternal ? clsx('noopener noreferrer', rel) : rel}
       download={download}
       {...rest}
     >

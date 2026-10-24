@@ -49,3 +49,10 @@ export const AllSizes: Story = {
     </Cluster>
   ),
 };
+
+export const WithLabel: Story = {
+  args: {
+    name: 'map-pin',
+    label: 'Location',
+  },
+};

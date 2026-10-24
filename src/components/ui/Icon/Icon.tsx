@@ -2,29 +2,29 @@ import React, { FC } from 'react';
 import styles from './Icon.module.css';
 import { clsx } from 'clsx';
 
-import Alert from '@/components/ui/Icon/icons/Alert';
-import ArrowLeft from '@/components/ui/Icon/icons/ArrowLeft';
-import ArrowRight from '@/components/ui/Icon/icons/ArrowRight';
-import Calendar from '@/components/ui/Icon/icons/Calendar';
-import Check from '@/components/ui/Icon/icons/Check';
-import ChevronRight from '@/components/ui/Icon/icons/ChevronRight';
-import Code from '@/components/ui/Icon/icons/Code';
-import Download from '@/components/ui/Icon/icons/Download';
-import External from '@/components/ui/Icon/icons/External';
-import Eye from '@/components/ui/Icon/icons/Eye';
-import EyeOff from '@/components/ui/Icon/icons/EyeOff';
-import Github from '@/components/ui/Icon/icons/Github';
-import Globe from '@/components/ui/Icon/icons/Globe';
-import Info from '@/components/ui/Icon/icons/Info';
-import Linkedin from '@/components/ui/Icon/icons/Linkedin';
-import Lock from '@/components/ui/Icon/icons/Lock';
-import Logout from '@/components/ui/Icon/icons/Logout';
-import Mail from '@/components/ui/Icon/icons/Mail';
-import MapPin from '@/components/ui/Icon/icons/MapPin';
-import Moon from '@/components/ui/Icon/icons/Moon';
-import Plus from '@/components/ui/Icon/icons/Plus';
-import Sun from '@/components/ui/Icon/icons/Sun';
-import Trash from '@/components/ui/Icon/icons/Trash';
+import Alert from './icons/Alert';
+import ArrowLeft from './icons/ArrowLeft';
+import ArrowRight from './icons/ArrowRight';
+import Calendar from './icons/Calendar';
+import Check from './icons/Check';
+import ChevronRight from './icons/ChevronRight';
+import Code from './icons/Code';
+import Download from './icons/Download';
+import External from './icons/External';
+import Eye from './icons/Eye';
+import EyeOff from './icons/EyeOff';
+import Github from './icons/Github';
+import Globe from './icons/Globe';
+import Info from './icons/Info';
+import Linkedin from './icons/Linkedin';
+import Lock from './icons/Lock';
+import Logout from './icons/Logout';
+import Mail from './icons/Mail';
+import MapPin from './icons/MapPin';
+import Moon from './icons/Moon';
+import Plus from './icons/Plus';
+import Sun from './icons/Sun';
+import Trash from './icons/Trash';
 
 export const ICON_NAMES = [
   'alert',
@@ -119,8 +119,6 @@ export const Icon: FC<IconProps> = ({
       case 'trash':
         return <Trash />;
       default:
-        // Compile-time exhaustiveness check: if a name is added to ICON_NAMES
-        // without a case above, name isn't narrowed to never here and tsc fails.
         name satisfies never;
         return null;
     }
