@@ -32,7 +32,15 @@
   --container-max: 75rem;
   --container-padding-inline: clamp(1rem, 4vw, 3rem);
   --touch-target: 2.75rem;
+  --control-height-lg: 3.25rem;
+  /* How far a pressed button sinks */
+  --press-offset: 1px;
   --header-offset: 4.5rem;
+
+  /* Icon sizes */
+  --icon-sm: 1rem;
+  --icon-md: 1.125rem;
+  --icon-lg: 1.25rem;
 
   /*
    * Breakpoint, for reference only: var() doesn't work in @media conditions,
