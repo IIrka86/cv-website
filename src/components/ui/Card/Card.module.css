@@ -1,0 +1,52 @@
+.card {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-8);
+  transition:
+    box-shadow var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard);
+}
+
+.sunken {
+  background: var(--color-surface-sunken);
+}
+
+.interactive {
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(calc(var(--lift-offset) * -1));
+      box-shadow: var(--shadow-lift);
+      border-color: var(--color-teal);
+    }
+  }
+
+  &:has(:focus-visible) {
+    transform: translateY(calc(var(--lift-offset) * -1));
+    box-shadow: var(--shadow-lift);
+    border-color: var(--color-teal);
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .cardLink {
+    outline: none;
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      content: ' ';
+    }
+  }
+}
+
+.selected {
+  border: var(--border-width) solid var(--color-teal);
+  box-shadow: var(--shadow-ring);
+}

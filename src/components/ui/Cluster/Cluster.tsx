@@ -4,18 +4,28 @@ import gapStyles from '@/styles/gap.module.css';
 import { clsx } from 'clsx';
 import type { Space } from '@/styles/tokens/space';
 
-export interface ClusterProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface ClusterProps extends React.HTMLAttributes<HTMLElement> {
   gap?: Space;
+  as?: 'div' | 'ul' | 'ol';
 }
 
-export const Cluster: FC<ClusterProps> = ({ gap, className, ...rest }) => {
+export const Cluster: FC<ClusterProps> = ({
+  gap,
+  as: Tag = 'div',
+  className,
+  ...rest
+}) => {
+  const isList = Tag === 'ol' || Tag === 'ul';
+
   return (
-    <div
+    <Tag
       className={clsx(
         styles.cluster,
         gap && gapStyles[`gap-${gap}`],
+        isList && styles.list,
         className,
       )}
+      role={isList ? 'list' : undefined}
       {...rest}
     />
   );
