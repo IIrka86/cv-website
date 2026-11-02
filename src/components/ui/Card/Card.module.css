@@ -47,6 +47,18 @@
 }
 
 .selected {
-  border: var(--border-width) solid var(--color-teal);
+  border-color: var(--color-teal);
   box-shadow: var(--shadow-ring);
+}
+
+.interactive.selected {
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: var(--shadow-ring), var(--shadow-lift);
+    }
+  }
+
+  &:has(:focus-visible) {
+    box-shadow: var(--shadow-ring), var(--shadow-lift);
+  }
 }

@@ -37,6 +37,17 @@
   padding-inline: var(--space-2);
 }
 
+.warning {
+  --color-dot: var(--color-warning);
+
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+  font-family: var(--font-body);
+  font-size: var(--text-small-size);
+  font-weight: var(--text-small-weight);
+  line-height: var(--text-small-leading);
+}
+
 .dot {
   inline-size: var(--dot-size);
   block-size: var(--dot-size);

@@ -25,6 +25,7 @@ export const Cluster: FC<ClusterProps> = ({
         isList && styles.list,
         className,
       )}
+      // Safari/VoiceOver drops list semantics when list-style is none
       role={isList ? 'list' : undefined}
       {...rest}
     />

@@ -51,6 +51,22 @@ export const AllVariants: Story = {
   ),
 };
 
+export const Warning: Story = {
+  args: {
+    tone: 'warning',
+    pulse: false,
+    dot: true,
+    children: 'Unsaved changes',
+  },
+  render: (args) => (
+    <Section tone="dark">
+      <Container>
+        <Badge {...args} />
+      </Container>
+    </Section>
+  ),
+};
+
 export const LongText: Story = {
   args: {
     children: 'Открыта к предложениям',

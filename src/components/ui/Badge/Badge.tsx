@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styles from './Badge.module.css';
 import { clsx } from 'clsx';
 
-export const BADGE_TONES = ['status', 'duration', 'info'] as const;
+export const BADGE_TONES = ['status', 'duration', 'info', 'warning'] as const;
 
 export type BadgeTone = (typeof BADGE_TONES)[number];
 
