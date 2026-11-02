@@ -79,5 +79,5 @@
   --color-row-hover: var(--color-on-dark-surface);
 
   /* On :root it was computed from the light --color-teal; re-resolve here */
-  --shadow-ring: 0 0 0 1px var(--color-teal);
+  --shadow-ring: 0 0 0 var(--border-width) var(--color-teal);
 }

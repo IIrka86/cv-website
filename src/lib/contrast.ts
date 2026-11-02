@@ -59,6 +59,7 @@ export const CONTRAST_PAIRS: ContrastPair[] = [
   text('chip-text', 'chip-bg', 'band-exp'),
   text('info-text', 'info-bg', 'surface'),
   text('error', 'error-bg', 'surface'),
+  text('warning', 'warning-bg', 'band-dark'),
   text('tile-text', 'tile-start'),
   text('tile-text', 'tile-end'),
   ...['on-dark', 'on-dark-muted', 'mint'].flatMap((fg) =>
