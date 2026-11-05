@@ -135,6 +135,12 @@
   --color-tile-start: var(--teal-810);
   --color-tile-end: var(--blue-820);
   --color-tile-text: var(--teal-140);
+  /* Re-declared so the gradient picks up the dark start/end colors */
+  --color-tile-bg: linear-gradient(
+    140deg,
+    var(--color-tile-start),
+    var(--color-tile-end)
+  );
 
   /* Hero gradient and photo backdrop */
   --color-hero-start: var(--navy-950);

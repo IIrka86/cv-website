@@ -65,6 +65,10 @@
         background: var(--color-teal);
         transform-origin: left center;
         animation: bar-in var(--duration-tab) var(--ease-out-soft) both;
+
+        @media (prefers-reduced-motion: reduce) {
+          animation: none;
+        }
       }
     }
   }
@@ -74,7 +78,6 @@
     flex-direction: column;
     gap: var(--space-2);
     border-bottom: none;
-    inline-size: 280px;
 
     .tab {
       position: relative;
@@ -144,10 +147,6 @@
       flex: none;
       scroll-snap-align: start;
       outline-offset: calc(var(--focus-ring-offset) * -1);
-
-      @media (prefers-reduced-motion: reduce) {
-        animation: none;
-      }
     }
   }
 }

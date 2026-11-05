@@ -89,7 +89,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  render: (args) => (
+    <>
+      <Heading as={'h4'} id={'header'}>
+        Experience
+      </Heading>
+      <Tabs {...args} />
+    </>
+  ),
+};
 
 export const Vertical: Story = {
   argTypes: {

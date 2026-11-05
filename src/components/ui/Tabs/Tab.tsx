@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 import { clsx } from 'clsx';
 import styles from './Tabs.module.css';
-import type { TabsOrientation } from './Tabs';
+import type { TabsOrientation } from './constants';
 
 export interface TabProps extends React.ComponentProps<'button'> {
   id: string;

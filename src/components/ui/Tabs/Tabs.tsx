@@ -5,12 +5,9 @@ import styles from './Tabs.module.css';
 import { clsx } from 'clsx';
 import { Tab } from './Tab';
 import { TabPanel } from './TabPanel';
+import type { TabsOrientation } from './constants';
 
-export const TABS_ORIENTATIONS = ['horizontal', 'vertical'] as const;
-
-export type TabsOrientation = (typeof TABS_ORIENTATIONS)[number];
-
-export interface TabItemProps {
+export interface TabItem {
   id: string;
   label: string;
   meta?: string;
@@ -25,7 +22,7 @@ const ARROW_STEPS: Record<TabsOrientation, Record<string, number>> = {
 
 export interface TabsProps extends React.ComponentPropsWithoutRef<'div'> {
   labelledBy: string;
-  tabs: TabItemProps[];
+  tabs: TabItem[];
   orientation?: TabsOrientation;
   defaultValue?: string;
 }
@@ -54,6 +51,8 @@ export const Tabs: FC<TabsProps> = ({
   };
 
   const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+
     let next;
 
     if (event.key === 'Home') {
