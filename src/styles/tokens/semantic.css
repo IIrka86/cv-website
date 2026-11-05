@@ -42,6 +42,11 @@
   --color-tile-start: var(--teal-120);
   --color-tile-end: var(--blue-160);
   --color-tile-text: var(--navy-750);
+  --color-tile-bg: linear-gradient(
+    140deg,
+    var(--color-tile-start),
+    var(--color-tile-end)
+  );
 
   /* Hero gradient and photo backdrop */
   --color-hero-start: var(--white);

@@ -34,10 +34,18 @@
   --touch-target: 2.75rem;
   --control-height-md: 3rem;
   --control-height-lg: 3.25rem;
+  --monogram-size-sm: 2.5rem;
+  --monogram-font-size-sm: 0.9375rem;
+  --monogram-size-md: 3rem;
+  --monogram-font-size-md: 1rem;
+  --monogram-size-lg: 3.5rem;
+  --monogram-font-size-lg: 1.0625rem;
+
   /* How far a pressed button sinks */
   --press-offset: 1px;
   --lift-offset: 4px;
   --header-offset: 4.5rem;
+  --tab-bar-in-height: 3px;
 
   /* Icon sizes */
   --icon-sm: 1rem;
@@ -65,6 +73,9 @@
   /* Focus */
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
+
+  /* Scrollbars (Chromium and Safari; Firefox only has thin/auto) */
+  --scrollbar-size: 4px;
 
   /* Section padding-block: 48px below 600px, 96px from 1200px */
   --section-padding-block: clamp(var(--space-12), 8vw, var(--space-24));
