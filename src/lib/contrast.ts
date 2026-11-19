@@ -78,6 +78,10 @@ export const CONTRAST_PAIRS: ContrastPair[] = [
   ui('focus', 'band-exp'),
   ui('border-strong', 'bg'),
   ui('border-strong', 'surface'),
+  ui('field-border', 'bg'),
+  ui('field-border', 'surface'),
+  ui('on-accent', 'field-border'),
+  ui('on-accent', 'teal'),
   ui('on-dark-border', 'band-dark'),
 ];
 

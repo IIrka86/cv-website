@@ -16,6 +16,7 @@
   /* Borders */
   --color-border: var(--slate-160);
   --color-border-strong: var(--slate-280);
+  --color-field-border: var(--slate-500);
   --color-divider: var(--slate-100);
 
   /* Text */
@@ -109,6 +110,7 @@
   /* Borders */
   --color-border: var(--navy-780);
   --color-border-strong: var(--navy-650);
+  --color-field-border: var(--navy-560);
   --color-divider: var(--navy-830);
 
   /* Text */

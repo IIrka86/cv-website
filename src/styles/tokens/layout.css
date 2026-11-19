@@ -47,6 +47,12 @@
   --header-offset: 4.5rem;
   --tab-bar-in-height: 3px;
 
+  /* Form controls: checkbox and radio box, switch track and knob */
+  --check-size: 1.25rem;
+  --switch-width: 3.5rem;
+  --switch-height: 2rem;
+  --switch-knob-size: 1.625rem;
+
   /* Icon sizes */
   --icon-sm: 1rem;
   --icon-md: 1.125rem;

@@ -1,0 +1,78 @@
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-block-size: var(--touch-target);
+  color: var(--color-text);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+  cursor: pointer;
+
+  &:has(:disabled) {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.control {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.state {
+  color: var(--color-text-muted);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-leading);
+}
+
+.switch:has(.input:checked) .off,
+.switch:not(:has(.input:checked)) .on {
+  display: none;
+}
+
+.trackWrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.track {
+  display: flex;
+  inline-size: var(--switch-width);
+  block-size: var(--switch-height);
+  padding: calc((var(--switch-height) - var(--switch-knob-size)) / 2);
+  border-radius: var(--radius-full);
+  background: var(--color-field-border);
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.knob {
+  inline-size: var(--switch-knob-size);
+  block-size: var(--switch-knob-size);
+  border-radius: var(--radius-full);
+  background: var(--color-on-accent);
+  transition: transform var(--duration-fast) var(--ease-out-soft);
+}
+
+.input:checked + .track {
+  background: var(--color-teal);
+}
+
+.input:checked + .track .knob {
+  transform: translateX(calc(var(--switch-width) - var(--switch-height)));
+}
+
+.input:focus-visible + .track {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}

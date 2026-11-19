@@ -1,0 +1,17 @@
+.group {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  margin-block-end: var(--space-1);
+  padding: 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-block-end: var(--space-1);
+}
