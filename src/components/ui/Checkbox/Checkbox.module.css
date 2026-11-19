@@ -1,0 +1,24 @@
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-block-size: var(--touch-target);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+  cursor: pointer;
+
+  &:has(:disabled) {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  flex: none;
+  inline-size: var(--check-size);
+  block-size: var(--check-size);
+  margin: 0;
+  accent-color: var(--color-teal);
+  cursor: inherit;
+}

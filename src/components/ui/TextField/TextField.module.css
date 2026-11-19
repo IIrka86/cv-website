@@ -1,0 +1,21 @@
+.wrap {
+  position: relative;
+  display: block;
+}
+
+.prefix {
+  position: absolute;
+  inset-inline-start: var(--space-3);
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  color: var(--color-teal);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-xs-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-mono-xs-leading);
+  pointer-events: none;
+}
+
+.withPrefix {
+  padding-inline-start: var(--space-10);
+}
