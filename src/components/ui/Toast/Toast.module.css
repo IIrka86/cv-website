@@ -26,6 +26,12 @@
   animation: toast-enter var(--duration-base) var(--ease-out-soft);
 }
 
+.text {
+  /* Flex items default to min-width: auto, so a long URL would widen the toast */
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
 .badge {
   display: flex;
   flex: none;

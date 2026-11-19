@@ -63,8 +63,12 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
         {toast && (
           <Toast
             key={toast.id}
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
+            onPointerEnter={(event) => {
+              if (event.pointerType === 'mouse') {
+                setPaused(true);
+              }
+            }}
+            onPointerLeave={() => setPaused(false)}
           >
             {toast.message}
           </Toast>

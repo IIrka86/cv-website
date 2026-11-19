@@ -11,7 +11,7 @@ export const Toast: FC<ToastProps> = ({ className, children, ...rest }) => {
       <span aria-hidden="true" className={styles.badge}>
         <Icon name="check" size="sm" strokeWidth={3} />
       </span>
-      <span>{children}</span>
+      <span className={styles.text}>{children}</span>
     </div>
   );
 };
