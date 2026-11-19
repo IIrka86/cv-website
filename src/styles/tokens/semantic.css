@@ -38,6 +38,8 @@
   --color-chip-bg: var(--teal-90);
   --color-chip-text: var(--teal-710);
   --color-row-hover: var(--teal-80);
+  /* Selected SegmentedControl option; its text is --color-on-accent */
+  --color-segment-active: var(--navy-930);
 
   /* Project monogram tiles */
   --color-tile-start: var(--teal-120);
@@ -88,6 +90,9 @@
   --color-warning-bg: color-mix(in srgb, var(--yellow-400) 16%, transparent);
   --color-info-bg: var(--blue-70);
   --color-info-text: var(--blue-800);
+  /* Toasts float over any background, so one value serves both themes */
+  --color-toast-bg: var(--slate-950);
+  --color-toast-text: var(--white);
 
   /* Shadows */
   --shadow-lift: 0 16px 40px
@@ -132,6 +137,7 @@
   --color-chip-bg: color-mix(in srgb, var(--teal-370) 14%, transparent);
   --color-chip-text: var(--teal-260);
   --color-row-hover: color-mix(in srgb, var(--teal-370) 8%, transparent);
+  --color-segment-active: var(--color-teal);
 
   /* Project monogram tiles */
   --color-tile-start: var(--teal-810);
