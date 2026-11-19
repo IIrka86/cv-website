@@ -68,6 +68,7 @@
   --color-accent: var(--color-mint);
   --color-on-accent: var(--color-on-mint);
   --color-teal: var(--color-mint);
+  --color-segment-active: var(--color-mint);
   --color-focus: var(--color-mint);
 
   /* Badges, chips, hover */

@@ -32,6 +32,7 @@
   --container-max: 75rem;
   --container-padding-inline: clamp(1rem, 4vw, 3rem);
   --touch-target: 2.75rem;
+  --control-height-sm: 2.25rem;
   --control-height-md: 3rem;
   --control-height-lg: 3.25rem;
   --monogram-size-sm: 2.5rem;
@@ -52,6 +53,9 @@
   --switch-width: 3.5rem;
   --switch-height: 2rem;
   --switch-knob-size: 1.625rem;
+
+  /* Toast: round badge with the check icon */
+  --toast-badge-size: 1.5rem;
 
   /* Icon sizes */
   --icon-sm: 1rem;
