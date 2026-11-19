@@ -44,6 +44,8 @@ export const SelectField: FC<SelectFieldProps> = ({
           <select
             required={required}
             className={clsx(fieldControlClassName, styles.select)}
+            // Without a value the browser selects the first enabled option,
+            // skipping the disabled placeholder, so start on '' explicitly
             defaultValue={
               placeholder && rest.value === undefined
                 ? (defaultValue ?? '')

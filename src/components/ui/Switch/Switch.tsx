@@ -18,7 +18,7 @@ export const Switch: FC<SwitchProps> = ({
 }) => {
   return (
     <label className={clsx(styles.switch, className)}>
-      <span className={styles.label}>{label}</span>
+      <span>{label}</span>
 
       <span className={styles.control}>
         {stateLabels && (
