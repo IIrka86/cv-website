@@ -3,8 +3,7 @@ import '@/styles/globals.css';
 import { fontVariables } from '@/styles/tokens/fonts';
 
 export const metadata: Metadata = {
-  title: 'Tokens. Dev',
-  description: 'Design system',
+  title: 'Dev',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/dev'>) {

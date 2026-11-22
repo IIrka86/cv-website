@@ -11,6 +11,12 @@ export const BUTTON_LINK_VARIANTS = ['primary', 'ghost', 'icon'] as const;
 export type ButtonLinkVariant = (typeof BUTTON_LINK_VARIANTS)[number];
 
 type BaseButtonLinkProps = React.ComponentPropsWithoutRef<'a'> & {
+  /**
+   * Internal paths (`/…`) go through next-intl's Link, which adds the current
+   * locale: pass `/projects`, not `/ru/projects`. Only for pages inside
+   * `app/[locale]`; routes outside it (`/admin`, `/login`, `/dev`) would get
+   * a locale prefix and 404. External URLs and `download` links render a plain `<a>`.
+   */
   href: string;
   size?: ButtonSize;
 };

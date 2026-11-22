@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 
+// Placeholder, the same for every locale: per-locale title and description
+// come with generateMetadata in T3.6
 export const metadata: Metadata = {
   title: 'My CV App',
   description: 'Describe my experience',
@@ -27,7 +29,10 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={fontVariables.join(' ')}>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          {/* The header (T3.5) and footer will sit next to <main> */}
+          <main>{children}</main>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

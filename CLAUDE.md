@@ -17,6 +17,7 @@ Layers: theme tokens → ui kit → sections → pages. A layer only imports fro
 - `src/components/ui` — UI kit
 - `src/components/sections` — page sections
 - `src/content` — CV data, typed by `src/types`
+- `src/i18n` — next-intl config (infrastructure, not a layer); the UI kit may import `@/i18n/navigation` for the locale-aware `Link`
 
 ## Conventions
 

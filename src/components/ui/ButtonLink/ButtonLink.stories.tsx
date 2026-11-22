@@ -85,8 +85,8 @@ export const AllKinds: Story = {
           >
             GitHub
           </ButtonLink>
-          <ButtonLink {...args} variant={'primary'} href={'/admin'}>
-            Admin
+          <ButtonLink {...args} variant={'primary'} href={'/#contact'}>
+            Contact
           </ButtonLink>
         </Cluster>
       </Container>

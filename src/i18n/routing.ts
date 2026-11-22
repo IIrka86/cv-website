@@ -1,9 +1,8 @@
 import { defineRouting } from 'next-intl/routing';
 
+// The only list of locales: the layout, request config, navigation
+// and generateStaticParams all read it from here
 export const routing = defineRouting({
-  // A list of all locales that are supported
   locales: ['en', 'ru', 'pl'],
-
-  // Used when no locale matches
   defaultLocale: 'en',
 });
