@@ -3,7 +3,7 @@ import { clsx } from 'clsx';
 import type { ButtonSize, IconPosition } from '@/components/ui/Button';
 import { ButtonContent, getButtonClassName } from '@/components/ui/Button';
 import type { IconName } from '@/components/ui/Icon';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { isExternalHref, isInternalHref } from '@/lib/href';
 
 export const BUTTON_LINK_VARIANTS = ['primary', 'ghost', 'icon'] as const;
