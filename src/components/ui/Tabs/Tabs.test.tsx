@@ -171,6 +171,10 @@ describe('Tabs', () => {
   });
 
   describe('nested tabs', () => {
+    // The inner tablist sits in the outer tabpanel, a sibling of the outer
+    // tablist, so its key events can't reach the outer handler today. This
+    // guards the structure: it fails if onKeyDown moves from role="tablist"
+    // to a wrapper that contains the panels too.
     it('keeps arrow keys inside the inner tablist', async () => {
       const user = userEvent.setup();
 

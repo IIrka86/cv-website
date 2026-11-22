@@ -2,10 +2,10 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Button } from './Button';
 import userEvent from '@testing-library/user-event';
-import { SubmitEventHandler } from 'react';
+import type { SubmitEventHandler } from 'react';
 
 describe('Button', () => {
-  it('should not submit form with type=button', async () => {
+  it('defaults to type=button and does not submit the parent form', async () => {
     const handleSubmit = vi.fn();
     const user = userEvent.setup();
 
@@ -21,7 +21,7 @@ describe('Button', () => {
     expect(handleSubmit).not.toHaveBeenCalled();
   });
 
-  it('should submit form with type=submit', async () => {
+  it('submits the parent form when type=submit', async () => {
     const handler: SubmitEventHandler<HTMLFormElement> = (e) => {
       e.preventDefault();
     };
@@ -68,7 +68,7 @@ describe('Button', () => {
     expect(handleClick).not.toHaveBeenCalled();
   });
 
-  it('takes name from aria-label when variant=icon', async () => {
+  it('takes name from aria-label when variant=icon', () => {
     render(
       <Button variant="icon" icon="calendar" aria-label="Open calendar" />,
     );
@@ -77,7 +77,7 @@ describe('Button', () => {
     expect(button).toBeInTheDocument();
   });
 
-  it('passes extra attributes to the button element', async () => {
+  it('passes extra attributes to the button element', () => {
     render(
       <Button aria-describedby={'aria'} name={'button-name'}>
         Button
