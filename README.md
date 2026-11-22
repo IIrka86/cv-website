@@ -26,6 +26,8 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run typecheck`       | Generate route types, then type-check with `tsc` |
 | `npm run format`          | Format all files with Prettier                   |
 | `npm run format:check`    | Check formatting without changing files (CI)     |
+| `npm test`                | Run unit and story tests once (CI)               |
+| `npm run test:unit`       | Run unit tests in watch mode                     |
 | `npm run storybook`       | Start Storybook on port 6006                     |
 | `npm run build-storybook` | Build static Storybook into `storybook-static/`  |
 
@@ -38,6 +40,19 @@ The UI kit (`src/components/ui`) is documented in [Storybook](https://storybook.
 - The Accessibility panel runs axe on every story.
 - `.storybook/preview.tsx` loads `globals.css` and adds the font variables to `<html>`, because
   stories render without `app/layout.tsx`.
+
+## Tests
+
+[Vitest](https://vitest.dev) runs two projects from `vitest.config.mts`:
+
+- **`unit`** — `src/**/*.test.tsx` in jsdom with [Testing Library](https://testing-library.com).
+  Test files live next to the component they cover.
+- **`storybook`** — every story becomes a test via `@storybook/addon-vitest`, run in headless
+  Chromium. A story fails if it throws while rendering or if axe finds an accessibility violation
+  (`a11y.test: 'error'` in `.storybook/preview.tsx`). Story tests use the default (light) theme only.
+
+Story tests need Chromium once per machine: `npx playwright install chromium`.
+To run a single project: `npm test -- --project storybook`.
 
 ## Project structure
 
@@ -91,8 +106,8 @@ Line endings are LF everywhere (enforced by `.gitattributes` and Prettier's `end
 ## CI
 
 [GitHub Actions](.github/workflows/ci.yml) runs on every pull request and on pushes to `main`:
-`npm run lint`, `npm run typecheck`, `npm run format:check` and `npm run build-storybook` on Node 22.
-The Storybook build catches broken stories; it doesn't run accessibility checks.
+`npm run lint`, `npm run typecheck`, `npm test`, `npm run format:check` and `npm run build-storybook`
+on Node 22. Chromium for story tests is installed in CI with `npx playwright install --with-deps chromium`.
 
 `typecheck` runs `next typegen` first: route types in `.next/types` and `next-env.d.ts` are generated
 by Next.js and are not in git, so a clean checkout needs them before `tsc`.

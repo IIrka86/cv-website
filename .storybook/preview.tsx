@@ -8,10 +8,8 @@ document.documentElement.classList.add(...fontVariables);
 const preview: Preview = {
   parameters: {
     a11y: {
-      // Only affects story tests run by @storybook/addon-vitest, which is not
-      // installed yet (T2.8). Until then violations show in the
-      // Accessibility panel only; CI's build-storybook doesn't check a11y.
-      test: 'todo',
+      // axe violations fail story tests (@storybook/addon-vitest) and CI
+      test: 'error',
     },
 
     backgrounds: {

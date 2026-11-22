@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   checks:
-    name: Lint, typecheck, format, storybook
+    name: Lint, typecheck, tests, format, storybook
     runs-on: ubuntu-latest
     env:
       HUSKY: 0
@@ -31,6 +31,12 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Tests (unit + stories)
+        run: npm test
 
       - name: Format check
         run: npm run format:check
