@@ -5,7 +5,8 @@ Personal CV and portfolio. Next.js App Router, TypeScript, CSS Modules, next-int
 ## Commands
 
 - `npm run dev` — dev server
-- `npm run lint` / `npm run typecheck` / `npm test`
+- `npm run lint` / `npm run typecheck` / `npm test` (unit + story tests, single run)
+- `npm run test:unit` — unit tests in watch mode
 - `npm run storybook` — UI kit
 
 ## Architecture

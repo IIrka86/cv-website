@@ -32,8 +32,11 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Unit tests
-        run: npm run test:run
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Tests (unit + stories)
+        run: npm test
 
       - name: Format check
         run: npm run format:check
