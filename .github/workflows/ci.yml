@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   checks:
-    name: Lint, typecheck, format, storybook
+    name: Lint, typecheck, tests, format, storybook
     runs-on: ubuntu-latest
     env:
       HUSKY: 0
@@ -31,6 +31,9 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
+
+      - name: Unit tests
+        run: npm run test:run
 
       - name: Format check
         run: npm run format:check
