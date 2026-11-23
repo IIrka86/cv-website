@@ -3,7 +3,7 @@ import { clsx } from 'clsx';
 import type { ButtonSize, IconPosition } from '@/components/ui/Button';
 import { ButtonContent, getButtonClassName } from '@/components/ui/Button';
 import type { IconName } from '@/components/ui/Icon';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { isExternalHref, isInternalHref } from '@/lib/href';
 
 export const BUTTON_LINK_VARIANTS = ['primary', 'ghost', 'icon'] as const;
@@ -11,6 +11,12 @@ export const BUTTON_LINK_VARIANTS = ['primary', 'ghost', 'icon'] as const;
 export type ButtonLinkVariant = (typeof BUTTON_LINK_VARIANTS)[number];
 
 type BaseButtonLinkProps = React.ComponentPropsWithoutRef<'a'> & {
+  /**
+   * Internal paths (`/…`) go through next-intl's Link, which adds the current
+   * locale: pass `/projects`, not `/ru/projects`. Only for pages inside
+   * `app/[locale]`; routes outside it (`/admin`, `/login`, `/dev`) would get
+   * a locale prefix and 404. External URLs and `download` links render a plain `<a>`.
+   */
   href: string;
   size?: ButtonSize;
 };
