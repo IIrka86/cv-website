@@ -1,3 +1,7 @@
 {
-  "hello": "Hello"
+  "Common": {
+    "name": "Iryna Kavaliova",
+    "title": "Frontend developer",
+    "openInNewTab": "(opens in a new tab)"
+  }
 }
