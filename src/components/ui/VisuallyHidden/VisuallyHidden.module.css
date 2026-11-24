@@ -1,0 +1,16 @@
+/*
+ * The standard "visually hidden" idiom. The 1px size is a deliberate
+ * exception to the no-px rule: it's not a design size but the smallest box
+ * screen readers still treat as content (a 0 size can be skipped).
+ */
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
+}
